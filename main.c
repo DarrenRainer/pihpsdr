@@ -251,7 +251,7 @@ fprintf(stderr,"width=%d height=%d\n", display_width, display_height);
   if(display_width>(MAX_DISPLAY_WIDTH+10) && display_height>(MAX_DISPLAY_HEIGHT+30)) {
     display_width=MAX_DISPLAY_WIDTH;
     display_height=MAX_DISPLAY_HEIGHT;
-    full_screen=0;
+    full_screen=1;
   } else {
     //
     // Some RaspPi variants report slightly too large screen sizes
@@ -276,7 +276,7 @@ fprintf(stderr,"display_width=%d display_height=%d\n", display_width, display_he
     gtk_window_fullscreen(GTK_WINDOW(top_window));
   }
   gtk_widget_set_size_request(top_window, display_width, display_height);
-  gtk_window_set_title (GTK_WINDOW (top_window), "piHPSDR");
+  gtk_window_set_title (GTK_WINDOW (top_window), "G4VTQ piHPSDR");
   gtk_window_set_position(GTK_WINDOW(top_window),GTK_WIN_POS_CENTER_ALWAYS);
   gtk_window_set_resizable(GTK_WINDOW(top_window), TRUE);
   fprintf(stderr,"setting top window icon\n");
