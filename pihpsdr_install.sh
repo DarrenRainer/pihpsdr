@@ -19,7 +19,7 @@ if [[ $input == "wdsp" ]]; then
 	install_dependency libfftw3-dev
 	
 	cd /tmp
-	git clone --depth=1 https://github.com/g0orx/wdsp
+	git clone --depth=1 https://github.com/DarrenRainer/wdsp
 	cd wdsp
 	make -j 4
 	sudo make install
@@ -62,7 +62,7 @@ elif [[ $input == "pihpsdr" ]]; then
 	install_dependency libi2c-dev
 	
 	cd /tmp
-	git clone https://github.com/g0orx/pihpsdr.git
+	git clone https://github.com/DarrenRainer/pihpsdr.git
 	cd pihpsdr
 	
 	#makefile modification; when 'on' switch it 'off' (adding '#'). 
