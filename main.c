@@ -20,8 +20,8 @@
 // Define maximum window size. 
 // Standard values 800 and 480: suitable for RaspberryBi 7-inch screen
 
-#define MAX_DISPLAY_WIDTH  1024
-#define MAX_DISPLAY_HEIGHT 600
+#define MAX_DISPLAY_WIDTH  800
+#define MAX_DISPLAY_HEIGHT 480
 
 #include <gtk/gtk.h>
 #include <gdk/gdk.h>
@@ -251,7 +251,7 @@ fprintf(stderr,"width=%d height=%d\n", display_width, display_height);
   if(display_width>(MAX_DISPLAY_WIDTH+10) && display_height>(MAX_DISPLAY_HEIGHT+30)) {
     display_width=MAX_DISPLAY_WIDTH;
     display_height=MAX_DISPLAY_HEIGHT;
-    full_screen=1;
+    full_screen=0;
   } else {
     //
     // Some RaspPi variants report slightly too large screen sizes
@@ -276,9 +276,9 @@ fprintf(stderr,"display_width=%d display_height=%d\n", display_width, display_he
     gtk_window_fullscreen(GTK_WINDOW(top_window));
   }
   gtk_widget_set_size_request(top_window, display_width, display_height);
-  gtk_window_set_title (GTK_WINDOW (top_window), "G4VTQ piHPSDR");
+  gtk_window_set_title (GTK_WINDOW (top_window), "piHPSDR");
   gtk_window_set_position(GTK_WINDOW(top_window),GTK_WIN_POS_CENTER_ALWAYS);
-  gtk_window_set_resizable(GTK_WINDOW(top_window), TRUE);
+  gtk_window_set_resizable(GTK_WINDOW(top_window), FALSE);
   fprintf(stderr,"setting top window icon\n");
   GError *error;
   if(!gtk_window_set_icon_from_file (GTK_WINDOW(top_window), "hpsdr.png", &error)) {
